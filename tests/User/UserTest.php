@@ -24,22 +24,18 @@ class UserTest extends TestCase
     /**
      * @dataProvider userProvider
      */
-    public function testAge($age)
+    public function testAge($age, $age2)
     {
-        $this->assertEquals($age, $this->user->getAge());
+        $this->assertEquals($age, $age2);
     }
 
-    public function testEmail()
-    {
-        $this->assertEquals('kemerbendiazad@gmail.com', $this->user->getEmail());
-    }
 
     public function userProvider()
     {
         return [
-            'one' => [1],
-            'two' => [5],
-            'correct' => [33],
+            'one' => [1,15],
+            'two' => [5, 5],
+            'correct' => [33, 56],
         ];
     }
 
