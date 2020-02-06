@@ -27,4 +27,9 @@ class UserTest extends TestCase
     {
         $this->assertEquals(33, $this->user->getAge());
     }
+
+    public function testAge2()
+    {
+        $this->assertEquals(34, $this->user->getAge());
+    }
 }
