@@ -13,7 +13,6 @@ class UserTest extends TestCase
     {
         $this->user = new User();
         $this->user->setAge(33);
-        $this->user->setEmail('kemerbendiazad@gmail.com');
     }
 
     protected function tearDown(): void
@@ -21,12 +20,18 @@ class UserTest extends TestCase
 
     }
 
-    /**
-     * @dataProvider userProvider
-     */
-    public function testAge($age, $age2)
+    public function testAge1()
     {
-        $this->assertEquals($age, $age2);
+        $this->assertEquals(33, $this->user->getAge());
+        return 3;
+    }
+
+    /**
+     * @depends testAge1
+     */
+    public function testAge2($age)
+    {
+        $this->assertEquals($age, $this->user->getAge());
     }
 
 
