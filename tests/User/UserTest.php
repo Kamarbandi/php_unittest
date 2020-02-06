@@ -21,15 +21,21 @@ class UserTest extends TestCase
     }
 
     /**
-     *
+     * @dataProvider userProvider
      */
-    public function testAge()
+    public function testAge($age)
     {
-        $this->assertEquals(33, $this->user->getAge());
+        $this->assertEquals($age, $this->user->getAge());
     }
 
-    public function testAge2()
+    public function userProvider()
     {
-        $this->assertEquals(34, $this->user->getAge());
+        return [
+            [1],
+            [5],
+            [33],
+        ];
     }
+
+
 }
